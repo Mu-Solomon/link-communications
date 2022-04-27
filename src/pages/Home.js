@@ -1,6 +1,88 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "../index.css";
+/* Sony Images */
+import sony_x2 from "../images/Sony_XZ2_small_3.jpg";
+let CatPhone = () => {
+  return (
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop mb-5">
+      <div class="brand-box">
+        <h5>Sale</h5>
+        <i>
+          <img
+            src={require("../images/Sony_XZ2_small_3.jpg")}
+            class="w-50 img-fluid"
+          />{" "}
+        </i>
+        <h4>
+          UGX <span class="nolmal">600,000</span>
+        </h4>
+        <span class="text-primary">Sony Xperia XZ2</span>
+      </div>
+      <a class="buynow" href="#">
+        Buy now
+      </a>
+    </div>
+  );
+};
 
 let Home = () => {
+  const [categories, setCategories] = useState([
+    {
+      sony: [
+        /*  {
+          img: require("../images/Sony_XZ2_small_3.jpg"),
+          price: 600000,
+          name: "Sony Xperia XZ2",
+        }, */
+        {
+          img: require("../images/Sony_X_Performance_main.jpg"),
+          price: 300000,
+          name: "Sony X Performance",
+        },
+        {
+          img: require("../images/sony_xz3_main_home.jpg"),
+          price: 800000,
+          name: "Sony Xperia XZ3",
+        },
+        {
+          img: require("../images/sony_xz_1.jpg"),
+          price: 450000,
+          name: "Sony Xperia XZ1",
+        },
+        {
+          img: require("../images/Sony_XZ2_small_3.jpg"),
+          price: 400000,
+          name: "Sony XZ S",
+        },
+        {
+          img: require("../images/sony_xperia_xzs-main.jpg"),
+          price: 250000,
+          name: "Sony X Compact",
+        },
+      ],
+    },
+    {
+      sharp: [
+        {
+          img: "../images/Sony_XZ2_small_3.jpg",
+          price: 400000,
+          name: "Sharp SH 02 J",
+        },
+        {
+          img: "../images/Sony_XZ2_small_3.jpg",
+          price: 350000,
+          name: "Sharp SH 02 J",
+        },
+      ],
+    },
+  ]);
+  let date = new Date();
+  function changePhones() {}
+  let activeClass = (element) => {
+    /*     setActive(!isActive);
+     */
+  };
   return (
     <React.Fragment>
       {/*  <!-- loader  --> */}
@@ -36,19 +118,19 @@ let Home = () => {
                     <nav class="main-menu">
                       <ul class="menu-area-main">
                         <li class="active">
-                          <a href="index.html">Home</a>
+                          <Link to="/">Home</Link>
                         </li>
                         <li>
-                          <a href="about.html">About</a>
+                          <Link to="/about">About</Link>
                         </li>
                         <li>
-                          <a href="brand.html">Brand</a>
+                          <Link to="/brand">Brand</Link>
                         </li>
                         <li>
-                          <a href="special.html">Specials</a>
+                          <Link to="/special">Specials</Link>
                         </li>
                         <li>
-                          <a href="contact.html">Contact Us</a>
+                          <Link to="/contact">Contact Us</Link>
                         </li>
                         <li class="last">
                           <a href="#">
@@ -64,7 +146,7 @@ let Home = () => {
                 </div>
               </div>
               <div class="col-md-6 offset-md-6">
-                <div class="location_assets/icon_bottum">
+                <div class="location_icon_bottum">
                   <ul>
                     <li>
                       <img src="assets/icon/call.png" />
@@ -115,7 +197,7 @@ let Home = () => {
                   <a class="buynow" href="#">
                     Buy Now
                   </a>
-                  <ul class="social_assets/icon">
+                  <ul class="social_icon">
                     <li>
                       <a href="#">
                         <i class="fa fa-facebook-f"></i>
@@ -249,12 +331,8 @@ let Home = () => {
                 <h3>About Us</h3>
                 <span>Our Mobile Shop</span>
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of It is a long established fact that a reader will
-                  be distracted by the readable content of a page when looking
-                  at its layout. The point of It is a long established fact that
-                  a reader will be distracted by the
+                  Best phone dealers since 2002 operating from Naamirembe Rd
+                  Next to Centenary Bank. Lions Shopping Mall Shop no. 1
                 </p>
               </div>
             </div>
@@ -280,11 +358,14 @@ let Home = () => {
             <div class="row">
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
                 <div class="brand__box">
-                  <img src="assets/images/1.png" alt="img" />
+                  <img
+                    src="http://thelinkcommunication.com/static/media/kyv42_main_image.66eb5a34.jpg"
+                    alt="img"
+                  />
                   <h3>
-                    UGX<strong class="red"> 400,000</strong>
+                    UGX<strong class="red"> 150,000</strong>
                   </h3>
-                  <span>Kyocera KYV42</span>
+                  <span>Kampeyini KYV42</span>
                   <i>
                     <img src="assets/images/star.png" />
                   </i>
@@ -301,11 +382,14 @@ let Home = () => {
               </div>
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
                 <div class="brand__box">
-                  <img src="assets/images/2.png" alt="img" />
+                  <img
+                    src="http://thelinkcommunication.com/static/media/Arrows_small_1.b4722a11.webp"
+                    alt="img"
+                  />
                   <h3>
-                    $<strong class="red">100</strong>
+                    UGX <strong class="red">250,000</strong>
                   </h3>
-                  <span>Mobile Phone</span>
+                  <span>Arrows Kaliba F01K</span>
                   <i>
                     <img src="assets/images/star.png" />
                   </i>
@@ -322,11 +406,14 @@ let Home = () => {
               </div>
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
                 <div class="brand__box">
-                  <img src="assets/images/3.png" alt="img" />
+                  <img
+                    src="http://thelinkcommunication.com/static/media/sharp%20v43_small_1.53f44245.jpg"
+                    alt="img"
+                  />
                   <h3>
-                    $<strong class="red">100</strong>
+                    UGX<strong class="red">200,000</strong>
                   </h3>
-                  <span>Mobile Phone</span>
+                  <span>Sharp Champion</span>
                   <i>
                     <img src="assets/images/star.png" />
                   </i>
@@ -343,11 +430,14 @@ let Home = () => {
               </div>
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
                 <div class="brand__box">
-                  <img src="assets/images/4.png" alt="img" />
+                  <img
+                    src="http://thelinkcommunication.com/static/media/sharp_alarm_main.34ec67cd.jpg"
+                    alt="img"
+                  />
                   <h3>
-                    $<strong class="red">100</strong>
+                    UGX <strong class="red">200,0000</strong>
                   </h3>
-                  <span>Mobile Phone</span>
+                  <span>Sharp Alarm</span>
                   <i>
                     <img src="assets/images/star.png" />
                   </i>
@@ -364,11 +454,14 @@ let Home = () => {
               </div>
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mrgn">
                 <div class="brand__box">
-                  <img src="assets/images/5.png" alt="img" />
+                  <img
+                    src="http://thelinkcommunication.com/static/media/Sharp_R2_Compact_1.496f8a0d.jpg"
+                    alt="img"
+                  />
                   <h3>
-                    $<strong class="red">100</strong>
+                    UGX <strong class="red">300,000</strong>
                   </h3>
-                  <span>Mobile Phone</span>
+                  <span>Sharp R2</span>
                   <i>
                     <img src="assets/images/star.png" />
                   </i>
@@ -385,11 +478,14 @@ let Home = () => {
               </div>
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mrgn">
                 <div class="brand__box">
-                  <img src="assets/images/6.png" alt="img" />
+                  <img
+                    src="http://thelinkcommunication.com/static/media/LG_Style_1_main.dfb89dd4.jpg"
+                    alt="img"
+                  />
                   <h3>
-                    $<strong class="red">100</strong>
+                    UGX <strong class="red">450,000</strong>
                   </h3>
-                  <span>Mobile Phone</span>
+                  <span>LG Style 1</span>
                   <i>
                     <img src="assets/images/star.png" />
                   </i>
@@ -422,26 +518,26 @@ let Home = () => {
               <div class="title">
                 <h2>Categories</h2>
                 <ul class="categiri">
-                  <li class="active">
-                    <a href="#">Sony</a>
+                  <li className="active" onClick={changePhones}>
+                    <button>Sony</button>
                   </li>
-                  <li>
-                    <a href="#">Kyocera</a>
+                  <li onClick={changePhones}>
+                    <button>Kyocera</button>
                   </li>
-                  <li>
-                    <a href="#shoes">Google</a>
+                  <li onClick={activeClass}>
+                    <button>Google</button>
                   </li>
-                  <li>
-                    <a href="#">Samsung</a>
+                  <li onClick={activeClass}>
+                    <button>Samsung</button>
                   </li>
-                  <li>
-                    <a href="#jewellery">LG</a>
+                  <li onClick={activeClass}>
+                    <button>LG</button>
                   </li>
-                  <li>
-                    <a href="#">Sharp</a>
+                  <li onClick={activeClass}>
+                    <button>Sharp</button>
                   </li>
-                  <li>
-                    <a href="#kids">Arrows</a>
+                  <li onClick={activeClass}>
+                    <button>Arrows</button>
                   </li>
                 </ul>
               </div>
@@ -452,59 +548,35 @@ let Home = () => {
           <div id="brand" class="brand-bg">
             <h3>New brands</h3>
             <div class="row">
-              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
-                <div class="brand-box">
-                  <h5>Sale</h5>
-                  <i>
-                    <img src="assets/icon/p1.png" />{" "}
-                  </i>
-                  <h4>
-                    Price $<span class="nolmal">100</span>
-                  </h4>
-                </div>
-                <a class="buynow" href="#">
-                  Buy now
-                </a>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
-                <div class="brand-box">
-                  <i>
-                    <img src="assets/icon/p2.png" />
-                  </i>
-                  <h4>
-                    Price $<span class="nolmal">100</span>
-                  </h4>
-                </div>
-                <a class="buynow" href="#">
-                  Buy now
-                </a>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <div class="brand-box">
-                  <i>
-                    <img src="assets/icon/p1.png" />
-                  </i>
-                  <h4>
-                    Price $<span class="nolmal">100</span>
-                  </h4>
-                </div>
-                <a class="buynow" href="#">
-                  Buy now
-                </a>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <div class="brand-box">
-                  <i>
-                    <img src="assets/icon/p4.png" />
-                  </i>
-                  <h4>
-                    Price $<span class="nolmal">100</span>
-                  </h4>
-                </div>
-                <a class="buynow" href="#">
-                  Buy now
-                </a>
-              </div>
+              {/* <CatPhone />
+              <CatPhone />
+              <CatPhone />
+              <CatPhone />
+              <CatPhone />
+              <CatPhone />*/}
+              <CatPhone />
+              {categories[0].sony.map((val) => {
+                return (
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop mb-5">
+                    <div class="brand-box">
+                      {/* <h5>Sale</h5> */}
+                      <i>
+                        <img src={val.img} class="w-50 img-fluid" />{" "}
+                      </i>
+                      <h4>
+                        UGX{" "}
+                        <span class="nolmal">
+                          {val.price.toLocaleString("en-US")}
+                        </span>
+                      </h4>
+                      <span class="text-primary">{val.name}</span>
+                    </div>
+                    <a class="buynow" href="#">
+                      Buy now
+                    </a>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <a class="seemore" href="#">
@@ -515,7 +587,7 @@ let Home = () => {
           {/*         <!-- news shoes -->
            */}{" "}
           <div id="shoes" class="shoes-bg">
-            <h3>New shoes</h3>
+            <h3>New Stock</h3>
             <div class="row">
               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
                 <div class="shoes-box">
@@ -769,7 +841,7 @@ let Home = () => {
                       demo@gmail.com
                     </p>
                   </div>
-                  <ul class="location_assets/icon">
+                  <ul class="location_icon">
                     <li>
                       <a href="#">
                         <i class="fa fa-facebook-f"></i>
@@ -813,8 +885,8 @@ let Home = () => {
           <div class="copyright">
             <div class="container">
               <p>
-                © 2019 All Rights Reserved. Design By
-                <a href="https://html.design/">Free Html Templates</a>
+                © {date.getFullYear()} All Rights Reserved. Design By
+                <a href="https://html.design/"> Mu-Solomon</a>
               </p>
             </div>
           </div>
@@ -824,18 +896,18 @@ let Home = () => {
        */}
       {/*     <!-- Javascript files-->
        */}{" "}
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/popper.min.js"></script>
+      <script src="assets/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/js/jquery-3.0.0.min.js"></script>
+      <script src="assets/js/plugin.js"></script>
       {/*     <!-- sidebar -->
        */}{" "}
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
+      <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="assets/js/custom.js"></script>
       {/*     <!-- javascript -->
        */}{" "}
-      <script src="js/owl.carousel.js"></script>
+      <script src="assets/js/owl.carousel.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
       {/* <script>
       $(document).ready(function () {
