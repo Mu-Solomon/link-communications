@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../index.css";
 /* Sony Images */
-import sony_x2 from "../images/Sony_XZ2_small_3.jpg";
 let CatPhone = () => {
   return (
     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop mb-5">
@@ -10,7 +9,7 @@ let CatPhone = () => {
         <h5>Sale</h5>
         <i>
           <img
-            src={require("../images/Sony_XZ2_small_3.jpg")}
+            src={require("../images/sony/Sony_XZ2_small_3.jpg")}
             class="w-50 img-fluid"
           />{" "}
         </i>
@@ -26,63 +25,403 @@ let CatPhone = () => {
   );
 };
 
-let Home = () => {
+function capturePhoneDetails(details) {
+  localStorage.removeItem("details");
+  if (details) {
+    localStorage.setItem("details", JSON.stringify(details));
+  }
+}
+
+let Home = (props) => {
   const [categories, setCategories] = useState([
     {
-      sony: [
-        /*  {
-          img: require("../images/Sony_XZ2_small_3.jpg"),
+      catType: [
+        {
+          img: require("../images/sony/Sony_XZ2_small_3.jpg"),
           price: 600000,
           name: "Sony Xperia XZ2",
-        }, */
-        {
-          img: require("../images/Sony_X_Performance_main.jpg"),
-          price: 300000,
-          name: "Sony X Performance",
+          sale: true,
+          data: {
+            name: "Sony Xperia XZ2",
+          },
         },
         {
-          img: require("../images/sony_xz3_main_home.jpg"),
+          img: require("../images/sony/Sony_X_Performance_main.jpg"),
+          price: 300000,
+          name: "Sony X Performance",
+          data: {
+            name: "Sony X Performance",
+          },
+        },
+        {
+          img: require("../images/sony/sony_xz3_main_home.jpg"),
           price: 800000,
           name: "Sony Xperia XZ3",
         },
         {
-          img: require("../images/sony_xz_1.jpg"),
+          img: require("../images/sony/sony_xz_1.jpg"),
           price: 450000,
           name: "Sony Xperia XZ1",
         },
         {
-          img: require("../images/Sony_XZ2_small_3.jpg"),
+          img: require("../images/sony/Sony_XZ2_small_3.jpg"),
           price: 400000,
           name: "Sony XZ S",
         },
         {
-          img: require("../images/sony_xperia_xzs-main.jpg"),
+          img: require("../images/sony/sony_xperia_xzs-main.jpg"),
           price: 250000,
           name: "Sony X Compact",
         },
       ],
     },
     {
-      sharp: [
+      newStock: [
         {
-          img: "../images/Sony_XZ2_small_3.jpg",
-          price: 400000,
-          name: "Sharp SH 02 J",
+          img: require("../images/sharp/Sharp_R1_main.jpg"),
+          price: 450000,
+          name: "Sharp Aquos R2 ",
+          sale: true,
         },
         {
-          img: "../images/Sony_XZ2_small_3.jpg",
-          price: 350000,
-          name: "Sharp SH 02 J",
+          img: require("../images/lg/LG_Style_1_main.jpg"),
+          price: 450000,
+          name: "LG Style 1",
+        },
+        {
+          img: require("../images/sharp/Sharp_704_main.webp"),
+          price: 200000,
+          name: "Sharp 704 SH",
+        },
+        {
+          img: require("../images/kyocera/Kyocera_basio_3_main.jpg"),
+          price: 190000,
+          name: "Pasula KYV43",
         },
       ],
     },
   ]);
   let date = new Date();
-  function changePhones() {}
-  let activeClass = (element) => {
-    /*     setActive(!isActive);
-     */
+  var Categore = categories[0].catType;
+  var new_Stock = {
+    newStock: [
+      {
+        img: require("../images/sharp/Sharp_R1_main.jpg"),
+        price: 450000,
+        name: "Sharp Aquos R2 ",
+        sale: true,
+      },
+      {
+        img: require("../images/lg/LG_Style_1_main.jpg"),
+        price: 450000,
+        name: "LG Style 1",
+      },
+      {
+        img: require("../images/sharp/Sharp_704_main.webp"),
+        price: 200000,
+        name: "Sharp 704 SH",
+      },
+      {
+        img: require("../images/kyocera/Kyocera_basio_3_main.jpg"),
+        price: 190000,
+        name: "Pasula KYV43",
+      },
+    ],
   };
+  let clonedState = categories.map((item) => {
+    return { ...item };
+  });
+  function changePhones(val) {
+    var buttons = document.getElementsByClassName("catLink");
+    for (let j = 0; j < buttons.length; j++) {
+      buttons[j].className = buttons[j].className.replace(" active", "");
+    }
+    val.currentTarget.className += " active";
+    switch (val.target.innerHTML) {
+      case "Sony":
+        /* clonedState[0].catType =  */
+        setCategories([
+          {
+            catType: [
+              {
+                img: require("../images/sony/Sony_XZ2_small_3.jpg"),
+                price: 600000,
+                name: "Sony Xperia XZ2",
+                sale: true,
+              },
+              {
+                img: require("../images/sony/Sony_X_Performance_main.jpg"),
+                price: 300000,
+                name: "Sony X Performance",
+              },
+              {
+                img: require("../images/sony/sony_xz3_main_home.jpg"),
+                price: 800000,
+                name: "Sony Xperia XZ3",
+              },
+              {
+                img: require("../images/sony/sony_xz_1.jpg"),
+                price: 450000,
+                name: "Sony Xperia XZ1",
+              },
+              {
+                img: require("../images/sony/Sony_XZ2_small_3.jpg"),
+                price: 400000,
+                name: "Sony XZ S",
+              },
+              {
+                img: require("../images/sony/sony_xperia_xzs-main.jpg"),
+                price: 250000,
+                name: "Sony X Compact",
+              },
+            ],
+          },
+          ...categories,
+        ]);
+        break;
+      case "Sharp":
+        setCategories([
+          {
+            catType: [
+              {
+                img: require("../images/sharp/Sharp_R2_Compact_main.jpg"),
+                price: 300000,
+                name: "Aquos R2 Compact",
+                sale: true,
+              },
+              {
+                img: require("../images/sharp/sharp_904sh_main.jpg"),
+                price: 150000,
+                name: "Sharp 940SH ",
+              },
+              {
+                img: require("../images/sharp/Sharp_Aquos_crystal_2_main.jpg"),
+                price: 180000,
+                name: "Sharp Aquos crystal 2",
+              },
+              {
+                img: require("../images/sharp/Sharp_shv40_main.jpg"),
+                price: 250000,
+                name: "Sharp SHV40",
+              },
+              {
+                img: require("../images/sharp/Sharp_shv39_main.jpg"),
+                price: 400000,
+                name: "Sharp SHV39",
+              },
+              {
+                img: require("../images/sharp/Sharp_R1_main.jpg"),
+                price: 450000,
+                name: "Sharp Aquos R2 ",
+              },
+              {
+                img: require("../images/sharp/Sharp_Aquos_crystal_main.jpg"),
+                price: 150000,
+                name: "Sharp Aquos crystal ",
+              },
+              {
+                img: require("../images/sharp/Sharp_R3_main.webp"),
+                price: 550000,
+                name: "Sharp Aquos R3",
+              },
+              {
+                img: require("../images/sharp/Sharp_shv43_main.jpg"),
+                price: 300000,
+                name: "Sharp SHV43",
+              },
+              {
+                img: require("../images/sharp/Sharp_shv41_main.jpg"),
+                price: 250000,
+                name: "Sharp SHV41",
+              },
+              {
+                img: require("../images/sharp/Sharp_sh04h_main.jpg"),
+                price: 280000,
+                name: "Sharp 04H ",
+              },
+              {
+                img: require("../images/sharp/Sharp_704_main.webp"),
+                price: 200000,
+                name: "Sharp 704 SH",
+              },
+            ],
+          },
+        ]);
+        break;
+      case "Kyocera":
+        setCategories([
+          {
+            catType: [
+              {
+                img: require("../images/kyocera/Kyocera_basio_3_main.jpg"),
+                price: 190000,
+                name: "Pasula KYV43",
+                sale: true,
+              },
+              {
+                img: require("../images/kyocera/Kyocera_basio_2_main.jpg"),
+                price: 150000,
+                name: "Basio KYV42",
+              },
+              {
+                img: require("../images/kyocera/Kyv44_main.jpg"),
+                price: 230000,
+                name: "Kyocera Kyv44 ",
+              },
+              {
+                img: require("../images/kyocera/Kyocera_basio_2_main.jpg"),
+                price: 350000,
+                name: "Basio KYV42",
+              },
+              {
+                img: require("../images/kyocera/Urbano_main.jpg"),
+                price: 350000,
+                name: "Urbano KYV45",
+              },
+              {
+                img: require("../images/kyocera/Kampeyini_main.jpg"),
+                price: 150000,
+                name: "Kampeyini KYV42",
+              },
+              {
+                img: require("../images/kyocera/Digno_main.jpg"),
+                price: 150000,
+                name: "Digno 602KC",
+              },
+              {
+                img: require("../images/kyocera/Kyocera_android_one_S6.jpg"),
+                price: 180000,
+                name: "Android One S6",
+              },
+              {
+                img: require("../images/kyocera/Torque_main.jpg"),
+                price: 350000,
+                name: "Torque KYV46",
+              },
+              {
+                img: require("../images/kyocera/Kyocera_Rafre_KYV40_main.jpg"),
+                price: 180000,
+                name: "Kyocera Rafre KYV40",
+              },
+            ],
+          },
+        ]);
+        break;
+      case "Google":
+        setCategories([
+          {
+            catType: [
+              {
+                img: require("../images/google/google_pixel.jpg"),
+                price: 550000,
+                name: "Google Pixel 3a",
+                sale: true,
+              },
+            ],
+          },
+        ]);
+        break;
+      case "Samsung":
+        setCategories([
+          {
+            catType: [
+              {
+                img: require("../images/galaxy/galaxy_feel.jpg"),
+                price: 450000,
+                name: "Galaxy J Feel",
+                sale: true,
+              },
+              {
+                img: require("../images/galaxy/galaxy_A30.jpg"),
+                price: 500000,
+                name: "Galaxy A30",
+              },
+            ],
+          },
+        ]);
+        break;
+      case "LG":
+        setCategories([
+          {
+            catType: [
+              {
+                img: require("../images/lg/lg_1_v30+.webp"),
+                price: 700000,
+                name: "LG V30+",
+                sale: true,
+              },
+              {
+                img: require("../images/lg/LG_Style_1_main.jpg"),
+                price: 450000,
+                name: "LG Style 1",
+              },
+              {
+                img: require("../images/lg/LG_Style_2_main.jpg"),
+                price: 550000,
+                name: "LG Style 2",
+              },
+              {
+                img: require("../images/lg/LG_V39_main.jpg"),
+                price: 300000,
+                name: "LG V39",
+              },
+            ],
+          },
+        ]);
+        break;
+      case "Arrows":
+        setCategories([
+          {
+            catType: [
+              {
+                img: require("../images/arrows/ARROWS_F-05_main.jpg"),
+                price: 200000,
+                name: "Arrows F-05J",
+                sale: true,
+              },
+              {
+                img: require("../images/arrows/ARROWS_MO2_main.jpg"),
+                price: 300000,
+                name: "Arrows F-02L",
+              },
+              {
+                img: require("../images/arrows/ARROWS_F-01H_main.jpg"),
+                price: 200000,
+                name: "Arrows F-01H",
+              },
+              {
+                img: require("../images/arrows/ARROWS_F-01K_main.jpg"),
+                price: 250000,
+                name: "Arrows Kaliba F-01K",
+              },
+              {
+                img: require("../images/arrows/ARROWS_F-01J_main.jpg"),
+                price: 280000,
+                name: "Arrows F-01J",
+              },
+              {
+                img: require("../images/arrows/ARROWS_F-04K_main.jpg"),
+                price: 300000,
+                name: "Arrows F-04K",
+              },
+              {
+                img: require("../images/arrows/ARROWS_F-04G_main.jpg"),
+                price: 250000,
+                name: "Arrows F-04G",
+              },
+            ],
+          },
+        ]);
+        break;
+      default:
+        break;
+    }
+  }
+
+  let activeClass = (element) => {
+    /*     setActive(!isActive);     */
+  };
+  localStorage.removeItem("details");
   return (
     <React.Fragment>
       {/*  <!-- loader  --> */}
@@ -105,9 +444,9 @@ let Home = () => {
                 <div class="full">
                   <div class="center-desk">
                     <div class="logo">
-                      <a href="index.html">
-                        <img src="assets/images/logo.png" alt="#" />
-                      </a>
+                      <Link to="/">
+                        <img src="assets/images/logo.png" alt="#home_img" />
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -194,22 +533,22 @@ let Home = () => {
                     of a page when looking at its layout. The point of using
                     Lorem Ipsum is that
                   </p>
-                  <a class="buynow" href="#">
+                  <a class="buynow" href="#categories">
                     Buy Now
                   </a>
                   <ul class="social_icon">
                     <li>
-                      <a href="#">
+                      <a href="https://facebook.com/Link2014" target="_parent">
                         <i class="fa fa-facebook-f"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://facebook.com/Link2014" target="_parent">
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://facebook.com/Link2014" target="_parent">
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
@@ -233,22 +572,22 @@ let Home = () => {
                     of a page when looking at its layout. The point of using
                     Lorem Ipsum is that
                   </p>
-                  <a class="buynow" href="#">
+                  <a class="buynow" href="#categories">
                     Buy Now
                   </a>
-                  <ul class="social_assets/icon">
+                  <ul class="social_icon">
                     <li>
-                      <a href="#">
+                      <a href="https://facebook.com/Link2014" target="_parent">
                         <i class="fa fa-facebook-f"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://facebook.com/Link2014" target="_parent">
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://facebook.com/Link2014" target="_parent">
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
@@ -272,22 +611,22 @@ let Home = () => {
                     of a page when looking at its layout. The point of using
                     Lorem Ipsum is that
                   </p>
-                  <a class="buynow" href="#">
+                  <a class="buynow" href="#categories">
                     Buy Now
                   </a>
-                  <ul class="social_assets/icon">
+                  <ul class="social_icon">
                     <li>
-                      <a href="#">
+                      <a href="https://facebook.com/Link2014" target="_parent">
                         <i class="fa fa-facebook-f"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://facebook.com/Link2014" target="_parent">
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://facebook.com/Link2014" target="_parent">
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
@@ -477,28 +816,30 @@ let Home = () => {
                 </div>
               </div>
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mrgn">
-                <div class="brand__box">
-                  <img
-                    src="http://thelinkcommunication.com/static/media/LG_Style_1_main.dfb89dd4.jpg"
-                    alt="img"
-                  />
-                  <h3>
-                    UGX <strong class="red">450,000</strong>
-                  </h3>
-                  <span>LG Style 1</span>
-                  <i>
-                    <img src="assets/images/star.png" />
-                  </i>
-                  <i>
-                    <img src="assets/images/star.png" />
-                  </i>
-                  <i>
-                    <img src="assets/images/star.png" />
-                  </i>
-                  <i>
-                    <img src="assets/images/star.png" />
-                  </i>
-                </div>
+                <Link to="/details">
+                  <div class="brand__box">
+                    <img
+                      src="http://thelinkcommunication.com/static/media/LG_Style_1_main.dfb89dd4.jpg"
+                      alt="img"
+                    />
+                    <h3>
+                      UGX <strong class="red">450,000</strong>
+                    </h3>
+                    <span>LG Style 1</span>
+                    <i>
+                      <img src="assets/images/star.png" />
+                    </i>
+                    <i>
+                      <img src="assets/images/star.png" />
+                    </i>
+                    <i>
+                      <img src="assets/images/star.png" />
+                    </i>
+                    <i>
+                      <img src="assets/images/star.png" />
+                    </i>
+                  </div>
+                </Link>
               </div>
               <div class="col-md-12">
                 <a class="read-more">See More</a>
@@ -516,27 +857,32 @@ let Home = () => {
           <div class="row">
             <div class="col-md-12">
               <div class="title">
-                <h2>Categories</h2>
+                <h2 id="categories">Categories</h2>
                 <ul class="categiri">
-                  <li className="active" onClick={changePhones}>
+                  <li
+                    id="defaultCat"
+                    className="catLink active"
+                    onClick={(val) => changePhones(val)}
+                  >
                     <button>Sony</button>
                   </li>
-                  <li onClick={changePhones}>
+
+                  <li className="catLink" onClick={(val) => changePhones(val)}>
                     <button>Kyocera</button>
                   </li>
-                  <li onClick={activeClass}>
+                  <li className="catLink" onClick={(val) => changePhones(val)}>
                     <button>Google</button>
                   </li>
-                  <li onClick={activeClass}>
+                  <li className="catLink" onClick={(val) => changePhones(val)}>
                     <button>Samsung</button>
                   </li>
-                  <li onClick={activeClass}>
+                  <li className="catLink" onClick={(val) => changePhones(val)}>
                     <button>LG</button>
                   </li>
-                  <li onClick={activeClass}>
+                  <li className="catLink" onClick={(val) => changePhones(val)}>
                     <button>Sharp</button>
                   </li>
-                  <li onClick={activeClass}>
+                  <li className="catLink" onClick={(val) => changePhones(val)}>
                     <button>Arrows</button>
                   </li>
                 </ul>
@@ -548,18 +894,11 @@ let Home = () => {
           <div id="brand" class="brand-bg">
             <h3>New brands</h3>
             <div class="row">
-              {/* <CatPhone />
-              <CatPhone />
-              <CatPhone />
-              <CatPhone />
-              <CatPhone />
-              <CatPhone />*/}
-              <CatPhone />
-              {categories[0].sony.map((val) => {
+              {Categore.map((val) => {
                 return (
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop mb-5">
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop mb-5 category-content">
                     <div class="brand-box">
-                      {/* <h5>Sale</h5> */}
+                      {val.sale ? <h5>Sale</h5> : ""}
                       <i>
                         <img src={val.img} class="w-50 img-fluid" />{" "}
                       </i>
@@ -571,12 +910,18 @@ let Home = () => {
                       </h4>
                       <span class="text-primary">{val.name}</span>
                     </div>
-                    <a class="buynow" href="#">
+                    <Link
+                      class="buynow"
+                      to="/details"
+                      onClick={() => {
+                        capturePhoneDetails(val.data);
+                      }}
+                    >
                       Buy now
-                    </a>
+                    </Link>
                   </div>
                 );
-              })}
+              }).slice(0, 8)}
             </div>
           </div>
           <a class="seemore" href="#">
@@ -589,59 +934,24 @@ let Home = () => {
           <div id="shoes" class="shoes-bg">
             <h3>New Stock</h3>
             <div class="row">
-              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
-                <div class="shoes-box">
-                  <h5>Sale</h5>
-                  <i>
-                    <img src="assets/icon/s1.png" />{" "}
-                  </i>
-                  <h4>
-                    Price $<span class="nolmal">100</span>
-                  </h4>
-                </div>
-                <a class="buynow" href="#">
-                  Buy now
-                </a>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
-                <div class="shoes-box">
-                  <i>
-                    <img src="assets/icon/s2.png" />
-                  </i>
-                  <h4>
-                    Price $<span class="nolmal">100</span>
-                  </h4>
-                </div>
-                <a class="buynow" href="#">
-                  Buy now
-                </a>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <div class="shoes-box">
-                  <i>
-                    <img src="assets/icon/s3.png" />
-                  </i>
-                  <h4>
-                    Price $<span class="nolmal">100</span>
-                  </h4>
-                </div>
-                <a class="buynow" href="#">
-                  Buy now
-                </a>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <div class="shoes-box">
-                  <i>
-                    <img src="assets/icon/s4.png" />
-                  </i>
-                  <h4>
-                    Price $<span class="nolmal">100</span>
-                  </h4>
-                </div>
-                <a class="buynow" href="#">
-                  Buy now
-                </a>
-              </div>
+              {new_Stock.newStock.map((val) => {
+                return (
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop mb-4">
+                    <div class="shoes-box">
+                      {val.sale ? <h5>Sale</h5> : ""}
+                      <i>
+                        <img src={val.img} />{" "}
+                      </i>
+                      <h4>
+                        UGX <span class="nolmal">{val.price}</span>
+                      </h4>
+                    </div>
+                    <a class="buynow" href="#">
+                      Buy now
+                    </a>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <a class="seemore" href="#">
@@ -697,17 +1007,13 @@ let Home = () => {
                   <div class="full testimonial_cont text_align_center cross_layout">
                     <div class="cross_inner">
                       <h3>
-                        Due markes
+                        Solomon M
                         <br />
-                        <strong class="ornage_color">Rental</strong>
+                        <strong class="ornage_color">Customer</strong>
                       </h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit ess
+                        They are true, I've spent with mine 3years now and it
+                        seldom falls in water at times. Very nice phones.!
                       </p>
                       <div class="full text_align_center margin_top_30">
                         <img src="assets/icon/testimonial_qoute.png" />
@@ -723,17 +1029,13 @@ let Home = () => {
                   <div class="full testimonial_cont text_align_center cross_layout">
                     <div class="cross_inner">
                       <h3>
-                        Due markes
+                        Mark Tabula
                         <br />
                         <strong class="ornage_color">Rental</strong>
                       </h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit ess
+                        I'm happy with the delivery team. They registered my
+                        Google and Whatsapp acounts freely. (-_-)
                       </p>
                       <div class="full text_align_center margin_top_30">
                         <img src="assets/icon/testimonial_qoute.png" />
@@ -749,17 +1051,14 @@ let Home = () => {
                   <div class="full testimonial_cont text_align_center cross_layout">
                     <div class="cross_inner">
                       <h3>
-                        Due markes
+                        Nickmarsial
                         <br />
-                        <strong class="ornage_color">Rental</strong>
+                        <strong class="ornage_color">Visitor</strong>
                       </h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit ess
+                        This opportunity is awesomely taken to thank the #mgt of
+                        Link communincation to provide effective and
+                        wholehearted services to the people of Uganda.!
                       </p>
                       <div class="full text_align_center margin_top_30">
                         <img src="assets/icon/testimonial_qoute.png" />
@@ -783,7 +1082,11 @@ let Home = () => {
               <div class="titlepage">
                 <h2>Contact us</h2>
               </div>
-              <form class="main_form">
+              <form
+                class="main_form"
+                action="https://formspree.io/f/mdobpwnn"
+                method="POST"
+              >
                 <div class="row">
                   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                     <input
@@ -791,6 +1094,7 @@ let Home = () => {
                       placeholder="Your name"
                       type="text"
                       name="Your Name"
+                      required
                     />
                   </div>
                   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
@@ -799,6 +1103,7 @@ let Home = () => {
                       placeholder="Email"
                       type="text"
                       name="Email"
+                      required
                     />
                   </div>
                   <div class="col-md-12">
@@ -810,10 +1115,18 @@ let Home = () => {
                     />
                   </div>
                   <div class="col-md-12">
-                    <textarea class="textarea" placeholder="Message"></textarea>
+                    <input
+                      type="text"
+                      class="textarea"
+                      name="Message"
+                      placeholder="Message"
+                      required
+                    />
                   </div>
                   <div class="col-md-12">
-                    <button class="send">Send</button>
+                    <button class="send" type="submit">
+                      Send
+                    </button>
                   </div>
                 </div>
               </form>
@@ -834,47 +1147,51 @@ let Home = () => {
                   <div class="headinga">
                     <h3>Address</h3>
                     <span>
-                      Healing Center, 176 W Streetname,New York, NY 10014, US
+                      Lions Shopping Arcade, LSC 01, Namirembe Rd. Next to
+                      Centenary Bank Kampala, Uganda .
                     </span>
                     <p>
-                      (+71) 8522369417 <br />
-                      demo@gmail.com
+                      +256 757 837184 <br />
+                      mutsbrian@gmail.com
                     </p>
                   </div>
                   <ul class="location_icon">
                     <li>
-                      <a href="#">
+                      <a href="https://facebook.com/Link2014" target="_parent">
                         <i class="fa fa-facebook-f"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://twitter.com/Link2014" target="_parent">
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://instagram.com/Link2014" target="_parent">
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
                   </ul>
                   <div class="menu-bottom">
                     <ul class="link">
-                      <li>
-                        <a href="#">Home</a>
+                      <li class="active">
+                        <Link to="/">Home</Link>
+                      </li>
+                      <li
+                        onclick={() => {
+                          window.location.reload(true);
+                        }}
+                      >
+                        <Link to="/about">About</Link>
                       </li>
                       <li>
-                        <a href="#">About</a>
-                      </li>
-
-                      <li>
-                        <a href="#">Brand </a>
+                        <Link to="/brand">Brand</Link>
                       </li>
                       <li>
-                        <a href="#">Specials </a>
+                        <Link to="/special">Specials</Link>
                       </li>
                       <li>
-                        <a href="#"> Contact us</a>
+                        <Link to="/contact">Contact Us</Link>
                       </li>
                     </ul>
                   </div>
@@ -886,7 +1203,10 @@ let Home = () => {
             <div class="container">
               <p>
                 © {date.getFullYear()} All Rights Reserved. Design By
-                <a href="https://html.design/"> Mu-Solomon</a>
+                <a href="https://mu-solomon.com/Link2014" target="_parent">
+                  {" "}
+                  Mu-Solomon
+                </a>
               </p>
             </div>
           </div>
@@ -909,7 +1229,8 @@ let Home = () => {
        */}{" "}
       <script src="assets/js/owl.carousel.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-      {/* <script>
+      <script>
+        {/* 
       $(document).ready(function () {
         $(".fancybox").fancybox({
           openEffect: "none",
@@ -924,8 +1245,8 @@ let Home = () => {
             $(this).removeClass("transition");
           }
         );
-      });
-    </script> */}
+      }); */}
+      </script>
     </React.Fragment>
   );
 };

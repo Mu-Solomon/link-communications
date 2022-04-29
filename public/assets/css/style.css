@@ -1806,9 +1806,9 @@ ul.categiri li a {padding: 10px 12px; font-weight: 500; font-size: 19px; }
 ul.categiri li a:hover { background: #ee3e0f; color: #fff;}
  */
 ul.categiri li {display: inline-block; padding: 0;}
-ul.categiri li.active button { background: #ee3e0f; color: #fff;}
+ul.categiri li.active button { background: #0198DD; color: #fff;}
 ul.categiri li button {padding: 10px 12px; font-weight: 500; font-size: 19px; }
-ul.categiri li button:hover { background: #ee3e0f; color: #fff;}
+ul.categiri li button:hover { background: #0198DD; color: #fff;}
 ul.categiri li button {
      outline: none;
      border: none;
@@ -1826,6 +1826,14 @@ line-height: 28px;
 color: #050000;
 padding: 20px 20px;
 }
+.category-content {
+     animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+     from {opacity: 0;}
+     to {opacity: 1;}
+   }
 
 
 /*  Clients section */
@@ -1896,12 +1904,12 @@ border-radius: 50px;
 
 
 
-
-
 /** brand_ (our brand) **/
+/* border-top: #db0000 solid 6px;}
+ */
 .brand_{
      padding-top: 60px;
-     border-top: #db0000 solid 6px;}
+     border-top: #0198DD solid 6px;}
 
 .brand_bg {
      background: #ebebeb;
@@ -2036,7 +2044,7 @@ padding: 15px 0px;
 font-size: 20px;
 line-height: 20px;
 font-weight: 500;
-background: #ee3e0f;
+background: #FF6F61;
 color: #fff;
 text-align: center;
 margin: 0 auto;
@@ -2162,14 +2170,14 @@ margin: 0 auto;
 }
 .form-control:focus {
      box-shadow: inherit;
-     border: #ff0000 solid 2px !important;
+     border: #0198DD solid 3px !important;
 }
 
 .textarea {
      font-family: poppins;
      border: #0198DD solid 2px;
      margin-bottom: 30px;
-     padding: 13px 20px;
+     padding: 100px 20px;
      width: 100%;
      padding-top: 40px;
 } 
@@ -2241,7 +2249,7 @@ ul.link li a {
      
 }
 ul.link li a:hover {
-     color: #ff0000;
+     color: #0198DD;
 }
 
 ul.location_icon {
@@ -2276,8 +2284,8 @@ font-size: 18px;
 } 
 
 ul.location_icon li a:hover {
-     background: #ff0000;
-border: solid #ff0000 1px;        
+     background: #0198DD;
+border: solid #0198DD 1px;        
 color: #fff;
 }
 

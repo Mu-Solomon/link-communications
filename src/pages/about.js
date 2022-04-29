@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 let About = () => {
+  let date = new Date();
+
   return (
     <React.Fragment>
       {/*     <!-- loader  -->
        */}
-      {/* <div class="loader_bg">
+     {/*  <div class="loader_bg">
           <div class="loader">
             <img src="assets/images/loading.gif" alt="#" />
           </div>
@@ -23,9 +25,9 @@ let About = () => {
                 <div class="full">
                   <div class="center-desk">
                     <div class="logo">
-                      <a href="index.html">
-                        <img src="assets/images/logo.png" alt="#" />
-                      </a>
+                      <Link to="/">
+                        <img src="assets/images/logo.png" alt="#home_img" />
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -68,11 +70,11 @@ let About = () => {
                   <ul>
                     <li>
                       <img src="assets/icon/call.png" />
-                      (+71)9876543109
+                      +256 757 837184
                     </li>
                     <li>
                       <img src="assets/icon/email.png" />
-                      demo@gmail.com
+                      mutsbrian@gmail.com
                     </li>
                     <li>
                       <img src="assets/icon/loc.png" />
@@ -158,34 +160,31 @@ let About = () => {
         <div id="contact" class="footer">
           <div class="container">
             <div class="row pdn-top-30">
-              <div class="col-md-12 ">
+              <div class="col-md-12">
                 <div class="footer-box">
                   <div class="headinga">
                     <h3>Address</h3>
                     <span>
-                      Healing Center, 176 W Streetname,New York, NY 10014, US
+                      Lions Shopping Arcade, LSC 01, Namirembe Rd. Next to
+                      Centenary Bank Kampala, Uganda .
                     </span>
                     <p>
-                      (+71) 8522369417
-                      <br />
-                      demo@gmail.com
+                      +256 757 837184 <br />
+                      mutsbrian@gmail.com
                     </p>
                   </div>
                   <ul class="location_icon">
                     <li>
-                      {" "}
                       <a href="#">
                         <i class="fa fa-facebook-f"></i>
                       </a>
                     </li>
                     <li>
-                      {" "}
                       <a href="#">
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      {" "}
                       <a href="#">
                         <i class="fa fa-instagram"></i>
                       </a>
@@ -193,26 +192,20 @@ let About = () => {
                   </ul>
                   <div class="menu-bottom">
                     <ul class="link">
-                      <li>
-                        {" "}
-                        <a href="#">Home</a>
+                      <li class="active">
+                        <Link to="/">Home</Link>
                       </li>
                       <li>
-                        {" "}
-                        <a href="#">About</a>
-                      </li>
-
-                      <li>
-                        {" "}
-                        <a href="#">Brand </a>
+                        <Link to="/about">About</Link>
                       </li>
                       <li>
-                        {" "}
-                        <a href="#">Specials </a>
+                        <Link to="/brand">Brand</Link>
                       </li>
                       <li>
-                        {" "}
-                        <a href="#"> Contact us</a>
+                        <Link to="/special">Specials</Link>
+                      </li>
+                      <li>
+                        <Link to="/contact">Contact Us</Link>
                       </li>
                     </ul>
                   </div>
@@ -223,8 +216,8 @@ let About = () => {
           <div class="copyright">
             <div class="container">
               <p>
-                © 2019 All Rights Reserved. Design By
-                <a href="https://html.design/"> Free Html Templates</a>
+                © {date.getFullYear()} All Rights Reserved. Design By
+                <a href="https://html.design/"> Mu-Solomon</a>
               </p>
             </div>
           </div>
