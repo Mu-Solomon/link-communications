@@ -21,7 +21,12 @@ let Contact = () => {
                 <div class="full">
                   <div class="center-desk">
                     <div class="logo">
-                      <Link to="/">
+                      <Link
+                        to="/"
+                        onClick={() => {
+                          window.location.reload();
+                        }}
+                      >
                         <img src="assets/images/logo.png" alt="#home_img" />
                       </Link>
                     </div>
@@ -34,19 +39,54 @@ let Contact = () => {
                     <nav class="main-menu">
                       <ul class="menu-area-main">
                         <li class="active">
-                          <Link to="/">Home</Link>
+                          <Link
+                            to="/"
+                            onClick={() => {
+                              window.location.reload();
+                            }}
+                          >
+                            Home
+                          </Link>
                         </li>
                         <li>
-                          <Link to="/about">About</Link>
+                          <Link
+                            to="/about"
+                            onClick={() => {
+                              window.location.reload();
+                            }}
+                          >
+                            About
+                          </Link>
                         </li>
                         <li>
-                          <Link to="/brand">Brand</Link>
+                          <Link
+                            to="/brand"
+                            onClick={() => {
+                              window.location.reload();
+                            }}
+                          >
+                            Brand
+                          </Link>
                         </li>
                         <li>
-                          <Link to="/special">Specials</Link>
+                          <Link
+                            to="/special"
+                            onClick={() => {
+                              window.location.reload();
+                            }}
+                          >
+                            Specials
+                          </Link>
                         </li>
                         <li>
-                          <Link to="/contact">Contact Us</Link>
+                          <Link
+                            to="/contact"
+                            onClick={() => {
+                              window.location.reload();
+                            }}
+                          >
+                            Contact Us
+                          </Link>
                         </li>
                         <li class="last">
                           <a href="#">
@@ -197,19 +237,54 @@ let Contact = () => {
                   <div class="menu-bottom">
                     <ul class="link">
                       <li class="active">
-                        <Link to="/">Home</Link>
+                        <Link
+                          to="/"
+                          onClick={() => {
+                            window.location.reload();
+                          }}
+                        >
+                          Home
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/about">About</Link>
+                        <Link
+                          to="/about"
+                          onClick={() => {
+                            window.location.reload();
+                          }}
+                        >
+                          About
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/brand">Brand</Link>
+                        <Link
+                          to="/brand"
+                          onClick={() => {
+                            window.location.reload();
+                          }}
+                        >
+                          Brand
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/special">Specials</Link>
+                        <Link
+                          to="/special"
+                          onClick={() => {
+                            window.location.reload();
+                          }}
+                        >
+                          Specials
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/contact">Contact Us</Link>
+                        <Link
+                          to="/contact"
+                          onClick={() => {
+                            window.location.reload();
+                          }}
+                        >
+                          Contact Us
+                        </Link>
                       </li>
                     </ul>
                   </div>
