@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import example from "../images/google/google_pixel_2.jpg";
+
 import Slider from "react-slick";
 import "../index.css";
 /* Sony Images */
@@ -420,31 +422,6 @@ let Home = (props) => {
   ]);
   let date = new Date();
   var Categore = categories[0].catType;
-  /*   var new_Stock = {
-    newStock: [
-      {
-        img: require("../images/sharp/Sharp_R1_main.jpg"),
-        price: 450000,
-        name: "Sharp Aquos R2 ",
-        sale: true,
-      },
-      {
-        img: require("../images/lg/LG_Style_1_main.jpg"),
-        price: 450000,
-        name: "LG Style 1",
-      },
-      {
-        img: require("../images/sharp/Sharp_704_main.webp"),
-        price: 200000,
-        name: "Sharp 704 SH",
-      },
-      {
-        img: require("../images/kyocera/Kyocera_basio_3_main.jpg"),
-        price: 190000,
-        name: "Pasula KYV43",
-      },
-    ],
-  }; */
 
   var settings = {
     dots: true,
@@ -452,7 +429,7 @@ let Home = (props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
   };
 
@@ -1386,11 +1363,11 @@ let Home = (props) => {
   return (
     <React.Fragment>
       {/*  <!-- loader  --> */}
-      {/* <div class="loader_bg">
+      <div class="loader_bg">
         <div class="loader">
           <img src="assets/images/loading.gif" alt="" />
         </div>
-      </div> */}
+      </div>
       {/*     <!-- end loader -->
        */}
       {/*     <!-- header -->
@@ -1730,7 +1707,9 @@ let Home = (props) => {
               })}
 
               <div class="col-md-12">
-                <a class="read-more">See More</a>
+                <a class="read-more" href="/brand">
+                  See More
+                </a>
               </div>
             </div>
           </div>
@@ -1812,7 +1791,7 @@ let Home = (props) => {
               }).slice(0, 8)}
             </div>
           </div>
-          <a class="seemore" href="#">
+          <a class="seemore" href="/brand#sharp">
             See more
           </a>
           {/*         <!-- end news brand -->
@@ -1848,7 +1827,7 @@ let Home = (props) => {
               })}
             </div>
           </div>
-          <a class="seemore" href="#">
+          <a class="seemore" href="/brand">
             See more
           </a>
         </div>
@@ -1875,7 +1854,7 @@ let Home = (props) => {
           >
             {/*           <!-- Indicators -->
              */}{" "}
-            <ul class="carousel-indicators">
+            {/* <ul class="carousel-indicators">
               <li
                 data-target="#testimonial_slider"
                 data-slide-to="0"
@@ -1891,8 +1870,8 @@ let Home = (props) => {
                 data-slide-to="2"
                 class=""
               ></li>
-            </ul>
-            {/*           <!-- The slideshow -->
+            </ul> */}
+            {/*      <!-- The slideshow -->
              */}{" "}
             <div class="carousel-inner">
               <Slider {...settings}>
@@ -1901,6 +1880,10 @@ let Home = (props) => {
                     <div class="full center"></div>
                     <div class="full testimonial_cont text_align_center cross_layout">
                       <div class="cross_inner">
+                        <img
+                          src={require("../images/profile/solomon.jpg")}
+                          class="prof-img img-fluid"
+                        />
                         <h3>
                           Solomon M
                           <br />
@@ -1923,6 +1906,10 @@ let Home = (props) => {
                     <div class="full center"></div>
                     <div class="full testimonial_cont text_align_center cross_layout">
                       <div class="cross_inner">
+                        <img
+                          src={require("../images/profile/mark.jpg")}
+                          class="prof-img img-fluid"
+                        />
                         <h3>
                           Mark Tabula
                           <br />
@@ -1945,6 +1932,10 @@ let Home = (props) => {
                     <div class="full center"></div>
                     <div class="full testimonial_cont text_align_center cross_layout">
                       <div class="cross_inner">
+                        <img
+                          src={require("../images/profile/trump.jpg")}
+                          class="prof-img img-fluid"
+                        />
                         <h3>
                           Nickmarsial
                           <br />

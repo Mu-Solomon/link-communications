@@ -99,7 +99,12 @@ let ProductContent = (props) => {
           <h4>Price:</h4>
           <p>
             {/*  UGX 300K <span>350K</span> */}
-            {props.actual_price} <span>{props.prev_price}</span>
+            {props.actual_price}{" "}
+            {props.prev_price == "UGX 700,000" ? (
+              <span> </span>
+            ) : (
+              <span>{props.prev_price}</span>
+            )}
           </p>
         </div>
         {/* <div class="p-size">
@@ -1963,54 +1968,44 @@ let Content = ({ phone }) => {
                   <div class="menu-bottom">
                     <ul class="link">
                       <li class="active">
-                        <Link
-                          to="/"
-                          onclick={() => {
-                            window.location.reload();
-                          }}
+                        <a
+                          href="/"
+                          
                         >
                           Home
-                        </Link>
+                        </a>
                       </li>
                       <li>
-                        <Link
-                          to="/about"
-                          onclick={() => {
-                            window.location.reload();
-                          }}
+                        <a
+                          href="/about"
+                          
                         >
                           About
-                        </Link>
+                        </a>
                       </li>
                       <li>
-                        <Link
-                          to="/brand"
-                          onclick={() => {
-                            window.location.reload();
-                          }}
+                        <a
+                          href="/brand"
+                          
                         >
                           Brand
-                        </Link>
+                        </a>
                       </li>
                       <li>
-                        <Link
-                          to="/special"
-                          onclick={() => {
-                            window.location.reload();
-                          }}
+                        <a
+                          href="/special"
+                          
                         >
                           Specials
-                        </Link>
+                        </a>
                       </li>
                       <li>
-                        <Link
-                          to="/contact"
-                          onclick={() => {
-                            window.location.reload();
-                          }}
+                        <a
+                          href="/contact"
+                          
                         >
                           Contact Us
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </div>

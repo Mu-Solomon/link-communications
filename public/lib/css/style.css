@@ -38,6 +38,12 @@ h1 {
   font-weight: 900;
   color: #0198dd;
 }
+.related-head {
+  font-size: 2.5rem;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 400;
+  color: #7e939c;
+}
 
 h2 {
   font-family: "Source Code Pro", monospace;
@@ -858,7 +864,7 @@ h2 {
 .related-sised {
   width: 50% !important;
   height: 150px !important;
-  margin: 50px;
+  margin: 50px 90px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1847,7 +1847,7 @@ padding: 20px 20px;
 }
 
 .clients_red {
-     background: #ff0000;
+     background: #642c2cd3;
      padding-top: 90px;
      padding-bottom:110px;
 } 
@@ -1898,9 +1898,22 @@ border-radius: 50px;
 
 .testimonial_cont h3 { color: #000; font-family: poppins;}
 
-
+.prof-img {
+	width: 100px;
+	height: 80px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
      
-
+@media  (min-width:768px) {
+     .prof-img {
+          width: 100px;
+          height: 80px;
+          border-radius: 50%;
+          margin: 0 auto;
+          transform: skewX(0deg);
+     }
+}
 
 
 
