@@ -907,54 +907,19 @@ let Brand = () => {
                     <nav class="main-menu">
                       <ul class="menu-area-main">
                         <li class="active">
-                          <Link
-                            to="/"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Home
-                          </Link>
+                          <a href="/">Home</a>
                         </li>
                         <li>
-                          <Link
-                            to="/about"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            About
-                          </Link>
+                          <a href="/about">About</a>
                         </li>
                         <li>
-                          <Link
-                            to="/brand"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Brand
-                          </Link>
+                          <a href="/brand">Brand</a>
                         </li>
                         <li>
-                          <Link
-                            to="/special"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Specials
-                          </Link>
+                          <a href="/special">Specials</a>
                         </li>
                         <li>
-                          <Link
-                            to="/contact"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Contact Us
-                          </Link>
+                          <a href="/contact">Contact Us</a>
                         </li>
                         <li class="last">
                           <a href="#">
@@ -1259,10 +1224,7 @@ let Brand = () => {
             </div>
           </div>
         </div>
-
-
       </div>
-     
       <footer>
         <div id="contact" class="footer">
           <div class="container">
@@ -1300,44 +1262,19 @@ let Brand = () => {
                   <div class="menu-bottom">
                     <ul class="link">
                       <li class="active">
-                        <a
-                          href="/"
-                          
-                        >
-                          Home
-                        </a>
+                        <a href="/">Home</a>
                       </li>
                       <li>
-                        <a
-                          href="/about"
-                          
-                        >
-                          About
-                        </a>
+                        <a href="/about">About</a>
                       </li>
                       <li>
-                        <a
-                          href="/brand"
-                          
-                        >
-                          Brand
-                        </a>
+                        <a href="/brand">Brand</a>
                       </li>
                       <li>
-                        <a
-                          href="/special"
-                          
-                        >
-                          Specials
-                        </a>
+                        <a href="/special">Specials</a>
                       </li>
                       <li>
-                        <a
-                          href="/contact"
-                          
-                        >
-                          Contact Us
-                        </a>
+                        <a href="/contact">Contact Us</a>
                       </li>
                     </ul>
                   </div>

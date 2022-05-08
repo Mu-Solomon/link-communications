@@ -39,54 +39,19 @@ let Contact = () => {
                     <nav class="main-menu">
                       <ul class="menu-area-main">
                         <li class="active">
-                          <Link
-                            to="/"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Home
-                          </Link>
+                          <a href="/">Home</a>
                         </li>
                         <li>
-                          <Link
-                            to="/about"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            About
-                          </Link>
+                          <a href="/about">About</a>
                         </li>
                         <li>
-                          <Link
-                            to="/brand"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Brand
-                          </Link>
+                          <a href="/brand">Brand</a>
                         </li>
                         <li>
-                          <Link
-                            to="/special"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Specials
-                          </Link>
+                          <a href="/special">Specials</a>
                         </li>
                         <li>
-                          <Link
-                            to="/contact"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Contact Us
-                          </Link>
+                          <a href="/contact">Contact Us</a>
                         </li>
                         <li class="last">
                           <a href="#">
@@ -146,7 +111,7 @@ let Contact = () => {
             <div class="col-md-12">
               <form
                 class="main_form"
-                action="https://formspree.io/f/mdobpwnn"
+                action="https://formspree.io/f/mlezarqd"
                 method="POST"
               >
                 <div class="row">
@@ -165,6 +130,7 @@ let Contact = () => {
                       placeholder="Email"
                       type="text"
                       name="Email"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                       required
                     />
                   </div>
@@ -174,6 +140,7 @@ let Contact = () => {
                       placeholder="Phone"
                       type="text"
                       name="Phone"
+                      pattern="[07][0-9]{9}"
                     />
                   </div>
                   <div class="col-md-12">
@@ -237,54 +204,19 @@ let Contact = () => {
                   <div class="menu-bottom">
                     <ul class="link">
                       <li class="active">
-                        <Link
-                          to="/"
-                          onClick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Home
-                        </Link>
+                        <a href="/">Home</a>
                       </li>
                       <li>
-                        <Link
-                          to="/about"
-                          onClick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          About
-                        </Link>
+                        <a href="/about">About</a>
                       </li>
                       <li>
-                        <Link
-                          to="/brand"
-                          onClick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Brand
-                        </Link>
+                        <a href="/brand">Brand</a>
                       </li>
                       <li>
-                        <Link
-                          to="/special"
-                          onClick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Specials
-                        </Link>
+                        <a href="/special">Specials</a>
                       </li>
                       <li>
-                        <Link
-                          to="/contact"
-                          onClick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Contact Us
-                        </Link>
+                        <a href="/contact">Contact Us</a>
                       </li>
                     </ul>
                   </div>
