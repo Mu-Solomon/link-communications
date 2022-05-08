@@ -190,73 +190,32 @@ let About = () => {
                   </div>
                   <ul class="location_icon">
                     <li>
-                      <a href="#">
+                      <a
+                        href="https://facebook.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-facebook-f"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a
+                        href="https://twitter.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a
+                        href="https://instagram.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
                   </ul>
                   <div class="menu-bottom">
                     <ul class="link">
-                      <li class="active">
-                        <Link
-                          to="/"
-                          onClick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Home
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/about"
-                          onClick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          About
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/brand"
-                          onClick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Brand
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/special"
-                          onClick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Specials
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/contact"
-                          onClick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Contact Us
-                        </Link>
-                      </li>
                       <li class="active">
                         <a href="/">Home</a>
                       </li>
@@ -282,13 +241,16 @@ let About = () => {
             <div class="container">
               <p>
                 © {date.getFullYear()} All Rights Reserved. Design By
-                <a href="https://html.design/"> Mu-Solomon</a>
+                <a href="https://www.facebook.com/profile.php?id=100054084329441" target="_parent">
+                  {" "}
+                  Mu-Solomon
+                </a>
               </p>
             </div>
           </div>
         </div>
       </footer>
-      {/*     <!-- end footer -->
+       {/*     <!-- end footer -->
        */}
       {/*   <!-- Javascript files-->
        */}{" "}

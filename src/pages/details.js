@@ -1919,17 +1919,26 @@ let Content = ({ phone }) => {
                   </div>
                   <ul class="location_icon">
                     <li>
-                      <a href="#">
+                      <a
+                        href="https://facebook.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-facebook-f"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a
+                        href="https://twitter.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a
+                        href="https://instagram.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
@@ -1961,12 +1970,16 @@ let Content = ({ phone }) => {
             <div class="container">
               <p>
                 © {date.getFullYear()} All Rights Reserved. Design By
-                <a href="https://html.design/"> Mu-Solomon</a>
+                <a href="https://www.facebook.com/profile.php?id=100054084329441" target="_parent">
+                  {" "}
+                  Mu-Solomon
+                </a>
               </p>
             </div>
           </div>
         </div>
       </footer>
+      
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
       <script src="lib/easing/easing.min.js"></script>

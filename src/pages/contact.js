@@ -186,17 +186,26 @@ let Contact = () => {
                   </div>
                   <ul class="location_icon">
                     <li>
-                      <a href="#">
+                      <a
+                        href="https://facebook.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-facebook-f"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a
+                        href="https://twitter.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a
+                        href="https://instagram.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
@@ -228,12 +237,16 @@ let Contact = () => {
             <div class="container">
               <p>
                 © {date.getFullYear()} All Rights Reserved. Design By
-                <a href="https://html.design/"> Mu-Solomon</a>
+                <a href="https://www.facebook.com/profile.php?id=100054084329441" target="_parent">
+                  {" "}
+                  Mu-Solomon
+                </a>
               </p>
             </div>
           </div>
         </div>
       </footer>
+      
     </React.Fragment>
   );
 };

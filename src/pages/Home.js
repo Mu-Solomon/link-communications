@@ -2079,7 +2079,7 @@ let Home = (props) => {
             <div class="container">
               <p>
                 © {date.getFullYear()} All Rights Reserved. Design By
-                <a href="https://mu-solomon.com/Link2014" target="_parent">
+                <a href="https://www.facebook.com/profile.php?id=100054084329441" target="_parent">
                   {" "}
                   Mu-Solomon
                 </a>
