@@ -1,5 +1,6 @@
 {
   "name": "link-communication",
+  "homepage": "http://thelinkcommunication.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
