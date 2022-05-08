@@ -2404,3 +2404,36 @@ ul.location_icon span {
 .special-page .relative  {text-align:center !important; }
 
 .special-page .footer {margin-top: 90px;}
+
+.blockquote-custom {
+     position: relative;
+     font-size: 1.1rem;
+   }
+   
+   .blockquote-custom-icon {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: absolute;
+     top: -25px;
+     left: 50px;
+   }
+
+   .about_box p:after {
+     content: "\f060";
+     font-family: "Font Awesome 5 Free";
+     font-weight: 900;
+     padding-right: 0px;
+   
+
+   }
+   .about_box_ p:before {
+         content: "\f061";
+     font-family: "Font Awesome 5 Free";
+     font-weight: 900;
+     padding-right: 5px;
+     color: #555;
+   }
