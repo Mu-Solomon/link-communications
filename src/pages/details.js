@@ -143,7 +143,7 @@ let ProductContent = (props) => {
           <a class="btn p_button bold-cart" href="#">
             <i class="fa fa-shopping-cart"></i>Add to Cart
           </a>
-          <a class="btn p_button bold-cart" href="tel:0757">
+          <a class="btn p_button bold-cart" href="tel:+256 757 837184 ">
             <i class="fa fa-shopping-bag"></i>Call Now
           </a>
         </div>
@@ -1623,54 +1623,19 @@ let Content = ({ phone }) => {
                     <nav class="main-menu">
                       <ul class="menu-area-main">
                         <li class="active">
-                          <Link
-                            to="/"
-                            onclick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Home
-                          </Link>
+                          <a href="/">Home</a>
                         </li>
                         <li>
-                          <Link
-                            to="/about"
-                            onclick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            About
-                          </Link>
+                          <a href="/about">About</a>
                         </li>
                         <li>
-                          <Link
-                            to="/brand"
-                            onclick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Brand
-                          </Link>
+                          <a href="/brand">Brand</a>
                         </li>
                         <li>
-                          <Link
-                            to="/special"
-                            onclick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Specials
-                          </Link>
+                          <a href="/special">Specials</a>
                         </li>
                         <li>
-                          <Link
-                            to="/contact"
-                            onclick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Contact Us
-                          </Link>
+                          <a href="/contact">Contact Us</a>
                         </li>
                         <li class="last">
                           <a href="#">
@@ -1867,16 +1832,20 @@ let Content = ({ phone }) => {
                 <div class="sidebar-slider normal-slider">
                   <Slider {...settings}>
                     {/* <SliderBottomProduct name="Urbano KYV45" price={450000} /> */}
-                    {state[0].otherPhones.map((val, key) => {
-                      return (
-                        <SliderBottomProduct
-                          name={val.name}
-                          price={val.price.toLocaleString("en-US").slice(0, 3)}
-                          img={val.img}
-                          data={val.data}
-                        />
-                      );
-                    })}
+                    {state[0].otherPhones
+                      .sort(() => Math.random() - Math.random())
+                      .map((val, key) => {
+                        return (
+                          <SliderBottomProduct
+                            name={val.name}
+                            price={val.price
+                              .toLocaleString("en-US")
+                              .slice(0, 3)}
+                            img={val.img}
+                            data={val.data}
+                          />
+                        );
+                      })}
                     {/* <SliderBottomProduct />
                   <SliderBottomProduct />
                   <SliderBottomProduct /> */}
@@ -1968,44 +1937,19 @@ let Content = ({ phone }) => {
                   <div class="menu-bottom">
                     <ul class="link">
                       <li class="active">
-                        <a
-                          href="/"
-                          
-                        >
-                          Home
-                        </a>
+                        <a href="/">Home</a>
                       </li>
                       <li>
-                        <a
-                          href="/about"
-                          
-                        >
-                          About
-                        </a>
+                        <a href="/about">About</a>
                       </li>
                       <li>
-                        <a
-                          href="/brand"
-                          
-                        >
-                          Brand
-                        </a>
+                        <a href="/brand">Brand</a>
                       </li>
                       <li>
-                        <a
-                          href="/special"
-                          
-                        >
-                          Specials
-                        </a>
+                        <a href="/special">Specials</a>
                       </li>
                       <li>
-                        <a
-                          href="/contact"
-                          
-                        >
-                          Contact Us
-                        </a>
+                        <a href="/contact">Contact Us</a>
                       </li>
                     </ul>
                   </div>
