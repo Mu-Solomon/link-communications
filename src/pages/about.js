@@ -43,54 +43,19 @@ let About = () => {
                     <nav class="main-menu">
                       <ul class="menu-area-main">
                         <li class="active">
-                          <Link
-                            to="/"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Home
-                          </Link>
+                          <a href="/">Home</a>
                         </li>
                         <li>
-                          <Link
-                            to="/about"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            About
-                          </Link>
+                          <a href="/about">About</a>
                         </li>
                         <li>
-                          <Link
-                            to="/brand"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Brand
-                          </Link>
+                          <a href="/brand">Brand</a>
                         </li>
                         <li>
-                          <Link
-                            to="/special"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Specials
-                          </Link>
+                          <a href="/special">Specials</a>
                         </li>
                         <li>
-                          <Link
-                            to="/contact"
-                            onClick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Contact Us
-                          </Link>
+                          <a href="/contact">Contact Us</a>
                         </li>
                         <li class="last">
                           <a href="#">
@@ -157,27 +122,37 @@ let About = () => {
             <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
               <div class="about_box">
                 <span>Our Mobile Shop</span>
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of It is a long established fact that a reader will
-                  be distracted by the readable content of a page when looking
-                  at its layout. The point of It is a long established fact that
-                  a reader will be distracted by the{" "}
-                </p>
+                <li>
+                  <p>
+                    Our address is Lions Shopping Arcade, LSC 01, Namirembe Rd.
+                    Next to Centenary Bank., +256 Kampala, Uganda .
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Luwero (our Newest branch ) Kasana Town opposite Shell
+                    petrol station.
+                  </p>
+                </li>
               </div>
             </div>
             <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
               <div class="about_box_ ">
                 <span>Our Mobile Shop</span>
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of It is a long established fact that a reader will
-                  be distracted by the readable content of a page when looking
-                  at its layout. The point of It is a long established fact that
-                  a reader will be distracted by the{" "}
-                </p>
+                <ul>
+                  <li>
+                    <p>
+                      Find us at Global Complex Building Shop no. FF22 Bunamwaya
+                      stagge.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      IMC HOSPITAL building on Bishop stage opposite GOOD
+                      QUALITY SUPERMARKET MUKONO TOWN
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
@@ -281,6 +256,21 @@ let About = () => {
                         >
                           Contact Us
                         </Link>
+                      </li>
+                      <li class="active">
+                        <a href="/">Home</a>
+                      </li>
+                      <li>
+                        <a href="/about">About</a>
+                      </li>
+                      <li>
+                        <a href="/brand">Brand</a>
+                      </li>
+                      <li>
+                        <a href="/special">Specials</a>
+                      </li>
+                      <li>
+                        <a href="/contact">Contact Us</a>
                       </li>
                     </ul>
                   </div>
