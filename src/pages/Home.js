@@ -419,6 +419,7 @@ let Home = (props) => {
         },
       ],
     },
+    { brandType: "Sony" },
   ]);
   let date = new Date();
   var Categore = categories[0].catType;
@@ -586,6 +587,9 @@ let Home = (props) => {
           },
           {
             brandPhones: [...categories[2].brandPhones],
+          },
+          {
+            brandType: val.target.innerHTML,
           },
         ]);
         break;
@@ -847,6 +851,9 @@ let Home = (props) => {
           {
             brandPhones: [...categories[2].brandPhones],
           },
+          {
+            brandType: val.target.innerHTML,
+          },
         ]);
         break;
       case "Kyocera":
@@ -1064,6 +1071,9 @@ let Home = (props) => {
           {
             brandPhones: [...categories[2].brandPhones],
           },
+          {
+            brandType: val.target.innerHTML,
+          },
         ]);
         break;
       case "Google":
@@ -1097,6 +1107,9 @@ let Home = (props) => {
           },
           {
             brandPhones: [...categories[2].brandPhones],
+          },
+          {
+            brandType: val.target.innerHTML,
           },
         ]);
         break;
@@ -1152,6 +1165,9 @@ let Home = (props) => {
           },
           {
             brandPhones: [...categories[2].brandPhones],
+          },
+          {
+            brandType: val.target.innerHTML,
           },
         ]);
         break;
@@ -1251,6 +1267,9 @@ let Home = (props) => {
           {
             brandPhones: [...categories[2].brandPhones],
           },
+          {
+            brandType: val.target.innerHTML,
+          },
         ]);
         break;
       case "Arrows":
@@ -1349,17 +1368,21 @@ let Home = (props) => {
           {
             brandPhones: [...categories[2].brandPhones],
           },
+          {
+            brandType: val.target.innerHTML,
+          },
         ]);
         break;
       default:
         break;
     }
   }
-
+  console.log(categories[0].brandType);
   let activeClass = (element) => {
     /*     setActive(!isActive);     */
   };
   localStorage.removeItem("details");
+
   return (
     <React.Fragment>
       {/*  <!-- loader  --> */}
@@ -1382,14 +1405,14 @@ let Home = (props) => {
                 <div class="full">
                   <div class="center-desk">
                     <div class="logo">
-                      <Link
-                        to="/"
+                      <a
+                        href="/"
                         onclick={() => {
                           window.location.reload();
                         }}
                       >
                         <img src="assets/images/logo.png" alt="#home_img" />
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1400,54 +1423,19 @@ let Home = (props) => {
                     <nav class="main-menu">
                       <ul class="menu-area-main">
                         <li class="active">
-                          <Link
-                            to="/"
-                            onclick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Home
-                          </Link>
+                          <a href="/">Home</a>
                         </li>
                         <li>
-                          <Link
-                            to="/about"
-                            onclick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            About
-                          </Link>
+                          <a href="/about">About</a>
                         </li>
                         <li>
-                          <Link
-                            to="/brand"
-                            onclick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Brand
-                          </Link>
+                          <a href="/brand">Brand</a>
                         </li>
                         <li>
-                          <Link
-                            to="/special"
-                            onclick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Specials
-                          </Link>
+                          <a href="/special">Specials</a>
                         </li>
                         <li>
-                          <Link
-                            to="/contact"
-                            onclick={() => {
-                              window.location.reload();
-                            }}
-                          >
-                            Contact Us
-                          </Link>
+                          <a href="/contact">Contact Us</a>
                         </li>
                         <li class="last">
                           <a href="#">
@@ -1506,10 +1494,8 @@ let Home = (props) => {
                   <span>All New Phones </span>
                   <h1>up to 25% Flat Sale</h1>
                   <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content <br />
-                    of a page when looking at its layout. The point of using
-                    Lorem Ipsum is that
+                    Japanese Waterproof and screen guard free smartphones <br />{" "}
+                    now available in Uganda. at the lowest <br /> price possible
                   </p>
                   <a class="buynow" href="#categories">
                     Buy Now
@@ -1537,7 +1523,7 @@ let Home = (props) => {
             <div class="carousel-item">
               <img
                 class="second-slide"
-                src="assets/images/banner.jpg"
+                src="assets/images/banner1.png"
                 alt="Second slide"
               />
               <div class="container">
@@ -1545,10 +1531,8 @@ let Home = (props) => {
                   <span>All New Phones </span>
                   <h1>up to 25% Flat Sale</h1>
                   <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content <br />
-                    of a page when looking at its layout. The point of using
-                    Lorem Ipsum is that
+                    Japanes Waterproof and screen guard free smartphones <br />{" "}
+                    now available in Uganda. at the lowest <br /> price possible
                   </p>
                   <a class="buynow" href="#categories">
                     Buy Now
@@ -1584,10 +1568,8 @@ let Home = (props) => {
                   <span>All New Phones </span>
                   <h1>up to 25% Flat Sale</h1>
                   <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content <br />
-                    of a page when looking at its layout. The point of using
-                    Lorem Ipsum is that
+                    Japanes Waterproof and screen guard free smartphones <br />{" "}
+                    now available in Uganda. at the lowest <br /> price possible
                   </p>
                   <a class="buynow" href="#categories">
                     Buy Now
@@ -1759,7 +1741,7 @@ let Home = (props) => {
           {/*         <!-- news brand -->
            */}{" "}
           <div id="brand" class="brand-bg">
-            <h3>New brands</h3>
+            <h3>{categories[3].brandType} brands</h3>
             <div class="row">
               {Categore.map((val) => {
                 return (
@@ -1971,7 +1953,7 @@ let Home = (props) => {
               </div>
               <form
                 class="main_form"
-                action="https://formspree.io/f/mdobpwnn"
+                action="https://formspree.io/f/mlezarqd"
                 method="POST"
               >
                 <div class="row">
@@ -1990,6 +1972,7 @@ let Home = (props) => {
                       placeholder="Email"
                       type="text"
                       name="Email"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                       required
                     />
                   </div>
@@ -1999,6 +1982,7 @@ let Home = (props) => {
                       placeholder="Phone"
                       type="text"
                       name="Phone"
+                      pattern="[07][0-9]{9}"
                     />
                   </div>
                   <div class="col-md-12">
@@ -2044,17 +2028,26 @@ let Home = (props) => {
                   </div>
                   <ul class="location_icon">
                     <li>
-                      <a href="https://facebook.com/Link2014" target="_parent">
+                      <a
+                        href="https://facebook.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-facebook-f"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="https://twitter.com/Link2014" target="_parent">
+                      <a
+                        href="https://twitter.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="https://instagram.com/Link2014" target="_parent">
+                      <a
+                        href="https://instagram.com/Linkcomm2014"
+                        target="_parent"
+                      >
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
@@ -2062,58 +2055,19 @@ let Home = (props) => {
                   <div class="menu-bottom">
                     <ul class="link">
                       <li class="active">
-                        <Link
-                          to="/"
-                          onclick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Home
-                        </Link>
-                      </li>
-                      <li
-                        onclick={() => {
-                          window.location.reload(true);
-                        }}
-                      >
-                        <Link
-                          to="/about"
-                          onclick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          About
-                        </Link>
+                        <a href="/">Home</a>
                       </li>
                       <li>
-                        <Link
-                          to="/brand"
-                          onclick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Brand
-                        </Link>
+                        <a href="/about">About</a>
                       </li>
                       <li>
-                        <Link
-                          to="/special"
-                          onclick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Specials
-                        </Link>
+                        <a href="/brand">Brand</a>
                       </li>
                       <li>
-                        <Link
-                          to="/contact"
-                          onclick={() => {
-                            window.location.reload();
-                          }}
-                        >
-                          Contact Us
-                        </Link>
+                        <a href="/special">Specials</a>
+                      </li>
+                      <li>
+                        <a href="/contact">Contact Us</a>
                       </li>
                     </ul>
                   </div>
