@@ -1682,6 +1682,9 @@ let Home = (props) => {
                         <i>
                           <img src="assets/images/star.png" />
                         </i>
+                        <i>
+                          <img src="assets/images/star.png" />
+                        </i>
                       </div>
                     </a>
                   </div>

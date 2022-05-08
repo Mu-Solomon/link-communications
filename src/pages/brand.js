@@ -1017,6 +1017,9 @@ let Brand = () => {
                         <i>
                           <img src="assets/images/star.png" />
                         </i>
+                        <i>
+                          <img src="assets/images/star.png" />
+                        </i>
                       </div>
                     </a>
                   </div>
@@ -1054,6 +1057,9 @@ let Brand = () => {
                           UGX <strong class="red">{val.price}</strong>
                         </h3>
                         <span>{val.name}</span>
+                        <i>
+                          <img src="assets/images/star.png" />
+                        </i>
                         <i>
                           <img src="assets/images/star.png" />
                         </i>
@@ -1114,6 +1120,9 @@ let Brand = () => {
                         <i>
                           <img src="assets/images/star.png" />
                         </i>
+                        <i>
+                          <img src="assets/images/star.png" />
+                        </i>
                       </div>
                     </a>
                   </div>
@@ -1162,6 +1171,9 @@ let Brand = () => {
                         <i>
                           <img src="assets/images/star.png" />
                         </i>
+                        <i>
+                          <img src="assets/images/star.png" />
+                        </i>
                       </div>
                     </a>
                   </div>
@@ -1198,6 +1210,9 @@ let Brand = () => {
                           UGX <strong class="red">{val.price}</strong>
                         </h3>
                         <span>{val.name}</span>
+                        <i>
+                          <img src="assets/images/star.png" />
+                        </i>
                         <i>
                           <img src="assets/images/star.png" />
                         </i>
